@@ -5,7 +5,7 @@ using System.Text;
 
 using Livet;
 
-namespace MyClock.Models
+namespace MyOwnClock.Models
 {
     public class Model : NotificationObject
     {

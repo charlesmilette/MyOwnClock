@@ -7,7 +7,7 @@ using System.Windows;
 
 using Livet;
 
-namespace MyClock
+namespace MyOwnClock
 {
     /// <summary>
     /// App.xaml の相互作用ロジック

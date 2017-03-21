@@ -1,4 +1,4 @@
-# MyClock
+# MyOwnClock
 シンプルな時計
 
 ![シンプルな時計](http://i.imgur.com/QtuhDXk.png "サンプル")

@@ -8,8 +8,8 @@
     <ProjectGuid>{115ADBAD-0114-4532-9173-998C3B9C32E4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyClock</RootNamespace>
-    <AssemblyName>MyClock</AssemblyName>
+    <RootNamespace>MyOwnClock</RootNamespace>
+    <AssemblyName>MyOwnClock</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>

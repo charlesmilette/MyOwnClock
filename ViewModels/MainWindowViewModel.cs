@@ -11,10 +11,10 @@ using Livet.Messaging.IO;
 using Livet.EventListeners;
 using Livet.Messaging.Windows;
 
-using MyClock.Models;
+using MyOwnClock.Models;
 using System.Windows.Threading;
 
-namespace MyClock.ViewModels
+namespace MyOwnClock.ViewModels
 {
     public class MainWindowViewModel : ViewModel
     {

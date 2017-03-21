@@ -4,9 +4,9 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
         xmlns:l="http://schemas.livet-mvvm.net/2011/wpf"
-        xmlns:v="clr-namespace:MyClock.Views"
-        xmlns:vm="clr-namespace:MyClock.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="MyClock.Views.MainWindow"
+        xmlns:v="clr-namespace:MyOwnClock.Views"
+        xmlns:vm="clr-namespace:MyOwnClock.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="MyOwnClock.Views.MainWindow"
         Title="時計 by Nekopanda" Height="86.974" Width="157.467" Background="#14000000" Loaded="Window_Loaded" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" Topmost="True">
 
     <Window.DataContext>
