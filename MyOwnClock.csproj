@@ -37,17 +37,17 @@
   <ItemGroup>
     <Reference Include="Livet">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>InfrastructureAssemblies\Livet.dll</HintPath>
+      <HintPath>packages\LivetCask.1.3.1.0\lib\net45\Livet.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Expression.Interactions">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>InfrastructureAssemblies\Microsoft.Expression.Interactions.dll</HintPath>
+      <HintPath>packages\LivetCask.1.3.1.0\lib\net45\Microsoft.Expression.Interactions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>InfrastructureAssemblies\System.Windows.Interactivity.dll</HintPath>
+      <HintPath>packages\LivetCask.1.3.1.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -106,11 +106,11 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="InfrastructureAssemblies\Design\Livet.Design.dll" />
-    <Content Include="InfrastructureAssemblies\Livet.dll" />
-    <Content Include="InfrastructureAssemblies\Livet.XML" />
-    <Content Include="InfrastructureAssemblies\Microsoft.Expression.Interactions.dll" />
-    <Content Include="InfrastructureAssemblies\System.Windows.Interactivity.dll" />
+    <Content Include="packages\LivetCask.1.3.1.0\lib\net45\Design\Livet.Design.dll" />
+    <Content Include="packages\LivetCask.1.3.1.0\lib\net45\Livet.dll" />
+    <Content Include="packages\LivetCask.1.3.1.0\lib\net45\Livet.XML" />
+    <Content Include="packages\LivetCask.1.3.1.0\lib\net45\Microsoft.Expression.Interactions.dll" />
+    <Content Include="packages\LivetCask.1.3.1.0\lib\net45\System.Windows.Interactivity.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
