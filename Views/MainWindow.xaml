@@ -14,7 +14,7 @@
     </Window.DataContext>
 
     <WindowChrome.WindowChrome>
-        <WindowChrome/>
+        <WindowChrome ResizeBorderThickness="0" GlassFrameThickness="-1"/>
     </WindowChrome.WindowChrome>
 
     <i:Interaction.Triggers>
