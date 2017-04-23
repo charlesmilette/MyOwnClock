@@ -105,13 +105,6 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="packages\LivetCask.1.3.1.0\lib\net45\Design\Livet.Design.dll" />
-    <Content Include="packages\LivetCask.1.3.1.0\lib\net45\Livet.dll" />
-    <Content Include="packages\LivetCask.1.3.1.0\lib\net45\Livet.XML" />
-    <Content Include="packages\LivetCask.1.3.1.0\lib\net45\Microsoft.Expression.Interactions.dll" />
-    <Content Include="packages\LivetCask.1.3.1.0\lib\net45\System.Windows.Interactivity.dll" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
