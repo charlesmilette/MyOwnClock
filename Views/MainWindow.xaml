@@ -7,11 +7,15 @@
         xmlns:v="clr-namespace:MyOwnClock.Views"
         xmlns:vm="clr-namespace:MyOwnClock.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="MyOwnClock.Views.MainWindow"
-        Title="時計 by Nekopanda" Height="86.974" Width="157.467" Background="#14000000" Loaded="Window_Loaded" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" Topmost="True">
+        Title="時計 by Nekopanda" Height="86.974" Width="157.467" Background="#14000000" Loaded="Window_Loaded" ResizeMode="CanMinimize" Topmost="True">
 
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome/>
+    </WindowChrome.WindowChrome>
 
     <i:Interaction.Triggers>
 
@@ -38,7 +42,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="timeText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding TimeString}" VerticalAlignment="Top" FontSize="48" Foreground="White" Margin="10,1.203,0,0"/>
-        <Button x:Name="button" Content="✕" HorizontalAlignment="Right" VerticalAlignment="Top" Width="23" BorderBrush="{x:Null}" Foreground="White" Grid.Column="1">
+        <Button x:Name="button" Content="✕" HorizontalAlignment="Right" VerticalAlignment="Top" Width="23" BorderBrush="{x:Null}" Foreground="White" Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="Click">
                     <l:WindowInteractionMessageAction>
@@ -50,7 +54,7 @@
             </i:Interaction.Triggers>
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
-                    <Setter Property="Background" Value="#00DDDDDD"/>
+                    <Setter Property="Background" Value="Transparent"/>
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="{x:Type Button}">
