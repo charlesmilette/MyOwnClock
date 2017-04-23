@@ -11,7 +11,6 @@ using Livet.Messaging.IO;
 using Livet.EventListeners;
 using Livet.Messaging.Windows;
 
-using MyOwnClock.Models;
 using System.Windows.Threading;
 
 namespace MyOwnClock.ViewModels
