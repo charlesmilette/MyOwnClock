@@ -42,12 +42,12 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="timeText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding TimeString}" VerticalAlignment="Top" FontSize="48" Foreground="White" Margin="10,1.203,0,0"/>
-        <Button x:Name="button" Content="✕" HorizontalAlignment="Right" VerticalAlignment="Top" Width="23" BorderBrush="{x:Null}" Foreground="White" Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True">
+        <Button Content="✕" HorizontalAlignment="Right" VerticalAlignment="Top" Width="23" BorderBrush="{x:Null}" Foreground="White" Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="Click">
                     <l:WindowInteractionMessageAction>
                         <l:DirectInteractionMessage>
-                            <l:WindowActionMessage/>
+                            <l:WindowActionMessage Action="Close"/>
                         </l:DirectInteractionMessage>
                     </l:WindowInteractionMessageAction>
                 </i:EventTrigger>
