@@ -34,15 +34,6 @@ namespace MyOwnClock.Views
             InitializeComponent();
         }
 
-        [DllImport("user32.dll", SetLastError = true)]
-        internal static extern int GetWindowLong(IntPtr hWnd, int nIndex);
-
-        [DllImport("user32.dll")]
-        internal static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
-
-        internal const int GWL_STYLE = (-16);
-        internal const int WS_SYSMENU = 0x80000;
-
         [DllImport("user32.dll")]
         internal static extern int SetWindowCompositionAttribute(IntPtr hwnd, ref WindowCompositionAttributeData data);
 
@@ -103,7 +94,6 @@ namespace MyOwnClock.Views
             var hWnd = new WindowInteropHelper(this).Handle;
 
             EnableBlur(hWnd);
-            SetWindowLong(hWnd, GWL_STYLE, GetWindowLong(hWnd, GWL_STYLE) & ~WS_SYSMENU);
         }
 
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
