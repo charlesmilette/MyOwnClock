@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:MyOwnClock.ViewModels"
     mc:Ignorable="d" x:Class="MyOwnClock.Views.MainWindow"
-    Title="時計 by Nekopanda" Height="86.974" Width="157.467" Background="#14000000" Loaded="Window_Loaded" ResizeMode="CanMinimize" Topmost="True" ShowInTaskbar="False">
+    Title="時計 by Nekopanda" Height="86.974" Width="157.467" Background="Transparent" Loaded="Window_Loaded" ResizeMode="CanMinimize" Topmost="True" ShowInTaskbar="False">
 
     <Window.DataContext>
         <vm:MainWindowViewModel/>
@@ -36,7 +36,7 @@
         <!--WindowのCloseキャンセル処理に対応する場合は、WindowCloseCancelBehaviorの使用を検討してください-->
 
     </i:Interaction.Triggers>
-    <Grid Background="#66000000">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
