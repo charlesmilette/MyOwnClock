@@ -24,7 +24,7 @@ namespace MyOwnClock.Views
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            new WindowInteropHelper(this).SetWindowCompositionAttribute();
+            new WindowInteropHelper(this).SetCompositionAttribute();
         }
 
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)

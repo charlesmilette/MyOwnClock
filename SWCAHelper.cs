@@ -70,6 +70,6 @@ namespace MyOwnClock
             Marshal.FreeHGlobal(accentPtr);
         }
 
-        public static void SetWindowCompositionAttribute(this WindowInteropHelper window, AccentState state = AccentState.ACCENT_ENABLE_BLURBEHIND, SolidColorBrush color = null) => SetWindowCompositionAttribute(window.Handle, state, color);
+        public static void SetCompositionAttribute(this WindowInteropHelper window, AccentState state = AccentState.ACCENT_ENABLE_BLURBEHIND, SolidColorBrush color = null) => SetWindowCompositionAttribute(window.Handle, state, color);
     }
 }
