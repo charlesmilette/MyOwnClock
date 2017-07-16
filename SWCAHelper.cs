@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Windows.Interop;
+using System.Windows.Media;
 
 namespace MyOwnClock
 {
@@ -40,13 +41,18 @@ namespace MyOwnClock
             internal int AnimationId;
         }
 
-        public static void SetWindowCompositionAttribute(IntPtr hWnd, AccentState state = AccentState.ACCENT_ENABLE_BLURBEHIND, uint color = 0x00000000)
+        public static void SetWindowCompositionAttribute(IntPtr hWnd, AccentState state = AccentState.ACCENT_ENABLE_BLURBEHIND, SolidColorBrush color = null)
         {
+            if (color == null)
+                color = Brushes.Transparent;
+
+            var hexColor = (uint)((color.Color.A << 24) + (color.Color.B << 16) + (color.Color.G << 8) + color.Color.R);
+
             var accent = new AccentPolicy()
             {
                 AccentState = state,
                 AccentFlags = 2,
-                GradientColor = color
+                GradientColor = hexColor
             };
             var accentStructSize = Marshal.SizeOf(accent);
             var accentPtr = Marshal.AllocHGlobal(accentStructSize);
@@ -64,6 +70,6 @@ namespace MyOwnClock
             Marshal.FreeHGlobal(accentPtr);
         }
 
-        public static void SetWindowCompositionAttribute(this WindowInteropHelper window, AccentState state = AccentState.ACCENT_ENABLE_BLURBEHIND, uint color = 0x00000000) => SetWindowCompositionAttribute(window.Handle, state, color);
+        public static void SetWindowCompositionAttribute(this WindowInteropHelper window, AccentState state = AccentState.ACCENT_ENABLE_BLURBEHIND, SolidColorBrush color = null) => SetWindowCompositionAttribute(window.Handle, state, color);
     }
 }
