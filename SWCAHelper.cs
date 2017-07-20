@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media;
 
@@ -116,5 +117,21 @@ namespace MyOwnClock
         /// <seealso cref="SetWindowCompositionAttribute(IntPtr, AccentState, SolidColorBrush)"/>
         /// <seealso cref="AccentState"/>
         public static void SetCompositionAttribute(this WindowInteropHelper window, AccentState state = AccentState.ACCENT_ENABLE_BLURBEHIND, SolidColorBrush color = null) => SetWindowCompositionAttribute(window.Handle, state, color);
+
+        /// <summary>
+        /// Provides a shorthand for SetWindowCompositionAttribute on XAML windows.
+        /// </summary>
+        /// <remarks>
+        /// If the target window uses system window decorations, the accent policy will bleed over the edges of the decoration.
+        /// </remarks>
+        /// <param name="state">
+        /// The accent state to apply.
+        /// </param>
+        /// <param name="color">
+        /// The value of GradientColor. Will default to 0x00FFFFFF.
+        /// </param>
+        /// <seealso cref="SetWindowCompositionAttribute(IntPtr, AccentState, SolidColorBrush)"/>
+        /// <seealso cref="AccentState"/>
+        public static void SetCompositionAttribute(this Window window, AccentState state = AccentState.ACCENT_ENABLE_BLURBEHIND, SolidColorBrush color = null) => SetWindowCompositionAttribute(new WindowInteropHelper(window).Handle, state, color);
     }
 }
