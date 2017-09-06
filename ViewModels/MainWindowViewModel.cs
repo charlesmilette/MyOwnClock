@@ -70,7 +70,7 @@ namespace MyOwnClock.ViewModels
         private string _TimeString = DateTime.Now.ToString("HH:mm");
 
         public string TimeString {
-            get { return _TimeString; }
+            get => _TimeString;
             set { 
                 if (_TimeString == value)
                     return;
@@ -84,7 +84,7 @@ namespace MyOwnClock.ViewModels
         private string _SecondString = DateTime.Now.ToString("ss");
 
         public string SecondString {
-            get { return _SecondString; }
+            get => _SecondString;
             set { 
                 if (_SecondString == value)
                     return;
@@ -98,7 +98,7 @@ namespace MyOwnClock.ViewModels
         private string _DateString = DateTime.Now.ToString("yyyy/MM/dd dddd");
 
         public string DateString {
-            get { return _DateString; }
+            get => _DateString;
             set { 
                 if (_DateString == value)
                     return;
