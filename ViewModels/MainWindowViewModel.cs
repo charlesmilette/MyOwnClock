@@ -6,21 +6,18 @@ namespace MyOwnClock.ViewModels
 {
     public class MainWindowViewModel : ViewModel
     {
-        public void Initialize()
-        {
-            new DispatcherTimer(
-                TimeSpan.FromSeconds(1),
-                DispatcherPriority.Normal,
-                (object sender, EventArgs e) =>
-                {
-                    DateTime now = DateTime.Now;
-                    TimeString = now.ToShortTimeString();
-                    SecondString = now.Second.ToString("00");
-                    DateString = now.ToLongDateString();
-                },
-                Dispatcher.CurrentDispatcher
-            ).Start();
-        }
+        public MainWindowViewModel() => new DispatcherTimer(
+            TimeSpan.FromSeconds(1),
+            DispatcherPriority.Normal,
+            (object sender, EventArgs e) =>
+            {
+                DateTime now = DateTime.Now;
+                TimeString = now.ToShortTimeString();
+                SecondString = now.Second.ToString("00");
+                DateString = now.ToLongDateString();
+            },
+            Dispatcher.CurrentDispatcher
+        ).Start();
 
         private string _TimeString;
         public string TimeString

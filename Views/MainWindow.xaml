@@ -1,14 +1,22 @@
 ﻿<Window
+    x:Class="MyOwnClock.Views.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:l="http://schemas.livet-mvvm.net/2011/wpf"
-    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:extensions="clr-namespace:MyOwnClock.Extensions"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:l="http://schemas.livet-mvvm.net/2011/wpf"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:MyOwnClock.ViewModels"
-    xmlns:extensions="clr-namespace:MyOwnClock.Extensions"
-    mc:Ignorable="d" x:Class="MyOwnClock.Views.MainWindow"
-    Title="MyOwnClock" Height="86.974" Width="157.467" Background="Transparent" Loaded="Window_Loaded" ResizeMode="CanMinimize" Topmost="True" ShowInTaskbar="False">
+    Title="MyOwnClock"
+    Width="157.467"
+    Height="86.974"
+    Background="Transparent"
+    Loaded="Window_Loaded"
+    ResizeMode="CanMinimize"
+    ShowInTaskbar="False"
+    Topmost="True"
+    mc:Ignorable="d">
 
     <Window.DataContext>
         <vm:MainWindowViewModel />
@@ -18,35 +26,59 @@
         <WindowChrome GlassFrameThickness="0,1,0,0" />
     </WindowChrome.WindowChrome>
 
-    <i:Interaction.Triggers>
-
-        <!--Viewに特別な要件が存在しない限りは、トリガーやアクションの自作にこだわらず積極的にコードビハインドを使いましょう -->
-        <!--Viewのコードビハインドは、基本的にView内で完結するロジックとViewModelからのイベントの受信(専用リスナを使用する)に限るとトラブルが少なくなります -->
-        <!--Livet1.1からはコードビハインドでViewModelのイベントを受信するためのWeakEventLisnterサポートが追加されています -->
-
-        <!--WindowのContentRenderedイベントのタイミングでViewModelのInitializeメソッドが呼ばれます-->
-        <i:EventTrigger EventName="ContentRendered">
-            <l:LivetCallMethodAction MethodTarget="{Binding}" MethodName="Initialize" />
-        </i:EventTrigger>
-
-        <!--Windowが閉じたタイミングでViewModelのDisposeメソッドが呼ばれます-->
-        <i:EventTrigger EventName="Closed">
-            <l:DataContextDisposeAction />
-        </i:EventTrigger>
-
-        <!--WindowのCloseキャンセル処理に対応する場合は、WindowCloseCancelBehaviorの使用を検討してください-->
-    </i:Interaction.Triggers>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="timeText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding TimeString}" VerticalAlignment="Top" FontSize="48" Foreground="White" Margin="10,1.203,0,0" />
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.ColumnSpan="2">
-            <Button Style="{StaticResource WindowControlStyle}" Content="−" extensions:CustomProperties.MouseOverColor="#22000000" extensions:CustomProperties.PressedColor="#44000000" />
-            <Button Style="{StaticResource WindowControlStyle}" Content="✕" extensions:CustomProperties.MouseOverColor="#E81123" extensions:CustomProperties.PressedColor="#E2232D" />
+        <TextBlock
+            x:Name="timeText"
+            Margin="10,1.203,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="48"
+            Foreground="White"
+            Text="{Binding TimeString}"
+            TextWrapping="Wrap" />
+        <StackPanel
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Orientation="Horizontal">
+            <Button
+                extensions:CustomProperties.MouseOverColor="#22000000"
+                extensions:CustomProperties.PressedColor="#44000000"
+                Content="−"
+                Style="{StaticResource WindowControlStyle}" />
+            <Button
+                extensions:CustomProperties.MouseOverColor="#E81123"
+                extensions:CustomProperties.PressedColor="#E2232D"
+                Content="✕"
+                Style="{StaticResource WindowControlStyle}" />
         </StackPanel>
-        <TextBlock x:Name="secondText" Height="16.222" Margin="5,40.05,0,0" TextWrapping="Wrap" Text="{Binding SecondString}" VerticalAlignment="Top" Foreground="White" Grid.Column="1" HorizontalAlignment="Left" Width="24.889" />
-        <TextBlock x:Name="dateText" Height="22.732" TextWrapping="Wrap" Text="{Binding DateString}" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Center" FontSize="16" Width="135.329" Margin="0,61.272,0,0" Grid.ColumnSpan="2" TextAlignment="Center" />
+        <TextBlock
+            x:Name="secondText"
+            Grid.Column="1"
+            Width="24.889"
+            Height="16.222"
+            Margin="5,40.05,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Foreground="White"
+            Text="{Binding SecondString}"
+            TextWrapping="Wrap" />
+        <TextBlock
+            x:Name="dateText"
+            Grid.ColumnSpan="2"
+            Width="135.329"
+            Height="22.732"
+            Margin="0,61.272,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            FontSize="16"
+            Foreground="White"
+            Text="{Binding DateString}"
+            TextAlignment="Center"
+            TextWrapping="Wrap" />
     </Grid>
 </Window>
