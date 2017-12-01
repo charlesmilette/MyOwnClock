@@ -42,8 +42,10 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="timeText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding TimeString}" VerticalAlignment="Top" FontSize="48" Foreground="White" Margin="10,1.203,0,0" />
-        <Button Style="{StaticResource WindowControlStyle}" Content="−" extensions:CustomProperties.MouseOverColor="#22000000" extensions:CustomProperties.PressedColor="#44000000" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,0,23,0" />
-        <Button Style="{StaticResource WindowControlStyle}" Content="✕" extensions:CustomProperties.MouseOverColor="#E81123" extensions:CustomProperties.PressedColor="#E2232D" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="1" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <Button Style="{StaticResource WindowControlStyle}" Content="−" extensions:CustomProperties.MouseOverColor="#22000000" extensions:CustomProperties.PressedColor="#44000000" />
+            <Button Style="{StaticResource WindowControlStyle}" Content="✕" extensions:CustomProperties.MouseOverColor="#E81123" extensions:CustomProperties.PressedColor="#E2232D" />
+        </StackPanel>
         <TextBlock x:Name="secondText" Height="16.222" Margin="5,40.05,0,0" TextWrapping="Wrap" Text="{Binding SecondString}" VerticalAlignment="Top" Foreground="White" Grid.Column="1" HorizontalAlignment="Left" Width="24.889" />
         <TextBlock x:Name="dateText" Height="22.732" TextWrapping="Wrap" Text="{Binding DateString}" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Center" FontSize="16" Width="135.329" Margin="0,61.272,0,0" Grid.ColumnSpan="2" TextAlignment="Center" />
     </Grid>
