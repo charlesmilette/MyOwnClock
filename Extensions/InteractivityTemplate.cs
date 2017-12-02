@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿// https://github.com/LogoFX/LogoFX/blob/master/LogoFX.Client.Mvvm.View.Infra/Util/InteractivityHelper.cs
+
+using System.Collections.Generic;
 
 namespace System.Windows.Interactivity
 {
