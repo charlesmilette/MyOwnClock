@@ -9,7 +9,7 @@ namespace MyOwnClock.ViewModels
         public MainWindowViewModel() => new DispatcherTimer(
             TimeSpan.FromSeconds(1),
             DispatcherPriority.Normal,
-            (object sender, EventArgs e) =>
+            (_, __) =>
             {
                 DateTime now = DateTime.Now;
                 TimeString = now.ToShortTimeString();

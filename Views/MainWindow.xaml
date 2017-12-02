@@ -4,8 +4,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:extensions="clr-namespace:MyOwnClock.Extensions"
-    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-    xmlns:l="http://schemas.livet-mvvm.net/2011/wpf"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:MyOwnClock.ViewModels"
     Title="MyOwnClock"
@@ -47,11 +45,13 @@
             Orientation="Horizontal">
             <Button
                 extensions:CustomProperties.MouseOverColor="#22000000"
+                extensions:CustomProperties.PressedAction="Minimize"
                 extensions:CustomProperties.PressedColor="#44000000"
                 Content="−"
                 Style="{StaticResource WindowControlStyle}" />
             <Button
                 extensions:CustomProperties.MouseOverColor="#E81123"
+                extensions:CustomProperties.PressedAction="Close"
                 extensions:CustomProperties.PressedColor="#E2232D"
                 Content="✕"
                 Style="{StaticResource WindowControlStyle}" />
